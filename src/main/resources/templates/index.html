@@ -3,21 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Petitions App</title>
+  <title>Padraig's Petitions</title>
+
+  <!-- Link to the external style sheet -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
 <header>
-  <h1>Welcome to My Petitions App!</h1>
+  <h1>Welcome to Padraig's Petitions!</h1>
 </header>
 
 <main>
-  <!-- Add content specific to your landing page -->
+  <h2>Petition Pages</h2>
+  <table>
+    <tr>
+      <td><a th:href="@{/petitions/create}">Start Petition</a></td>
+    </tr>
+    <tr>
+      <td><a th:href="@{/petitions}">View Petitions</a></td>
+    </tr>
+    <tr>
+      <td><a th:href="@{/search-petition}">Search Petition</a></td>
+    </tr>
+  </table>
 
-  <!-- index.html -->
-  <a th:href="@{/petitions/create}">Create a Petition</a>
-
-
+  <!-- Separate button for starting a petition -->
+  <button th:href="@{/petitions/create}">Start Petition</button>
 </main>
 
 <footer>
@@ -26,3 +38,4 @@
 
 </body>
 </html>
+
