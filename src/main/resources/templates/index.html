@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
@@ -11,7 +12,7 @@
 <body>
 
 <header>
-  <h1>Welcome to Padraig's Petitions!</h1>
+  <h1>Padraig's Petitions!</h1>
 </header>
 
 <main>
@@ -28,14 +29,11 @@
     </tr>
   </table>
 
-  <!-- Separate button for starting a petition -->
-  <button th:href="@{/petitions/create}">Start Petition</button>
+  <button onclick="window.location.href='/petitions/create'">Start Petition</button>
 </main>
 
-<footer>
-  <!-- Add footer content -->
-</footer>
 
 </body>
 </html>
+
 
