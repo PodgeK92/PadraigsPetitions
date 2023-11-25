@@ -21,14 +21,13 @@ main {
 table {
   width: 100%;
   border-collapse: collapse;
-}
-
-table, th, td {
-  border: 1px solid #ecf0f1; /* Thin white trim to individualize each cell */
+  display: flex; /* Display table elements side by side */
 }
 
 th, td {
+  border: 1px solid #ecf0f1; /* Thin white trim to individualize each cell */
   padding: 15px; /* Increased padding for better spacing */
+  flex: 1; /* Equal width for each table cell */
 }
 
 .create-petition-link {
@@ -46,4 +45,5 @@ th, td {
 .create-petition-link:hover {
   background-color: #27ae60;
 }
+
 
