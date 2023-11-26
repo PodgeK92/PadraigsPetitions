@@ -34,6 +34,13 @@ pipeline {
             }
         }
 
+        stage('package') {
+                    steps {
+                        // Archive the War file as an artifact
+                        archiveArtifacts 'target/your-application-name.war'
+                    }
+                }
+
         stage('Exec') {
             steps {
                 sh 'mvn spring-boot:run'
