@@ -25,6 +25,15 @@ pipeline {
             }
         }
 
+        stage('Test') {
+            steps {
+                // Run Maven tests
+                script {
+                    sh 'mvn test'
+                }
+            }
+        }
+
         stage('Exec') {
             steps {
                 sh 'mvn spring-boot:run'
