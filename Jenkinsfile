@@ -40,13 +40,14 @@ pipeline {
             }
         }
 
-        post {
-            success {
+        stage('Archive') {
+            steps {
                 // Archive the War file as an artifact
-                archiveArtifacts allowEmptyArchive: true,
-                    artifacts: '**/PadraigsPetitions.war'
+               archiveArtifacts allowEmptyArchive: true,
+                   artifacts: 'target/Padraigspetitions.war'
             }
         }
+
 
         stage('Exec') {
             steps {
