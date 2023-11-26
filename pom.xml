@@ -51,6 +51,8 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
+		<finalName>Padraigspetitions</finalName>
 	</build>
 
 </project>
