@@ -44,7 +44,7 @@ pipeline {
             steps {
                 // Archive the War file as an artifact
                archiveArtifacts allowEmptyArchive: true,
-                   artifacts: 'target/Padraigspetitions.war'
+                   artifacts: 'target/PadraigsPetitions.war'
             }
         }
 
