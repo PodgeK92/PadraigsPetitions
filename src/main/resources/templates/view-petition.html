@@ -7,11 +7,33 @@
 </head>
 <body>
 
-<h2 th:text="${petition.title}"></h2>
-<p th:text="${petition.description}"></p>
+<h2>View Petition</h2>
 
+<!-- Display petition details -->
+<p>Title: <span th:text="${petition.title}"></span></p>
+<p>Description: <span th:text="${petition.description}"></span></p>
 
+<!-- Form for users to support the petition -->
+<form action="/petitions/{id}/support" method="post">
+  <label for="name">Your Name:</label>
+  <input type="text" id="name" name="name" required/>
+
+  <label for="email">Your Email:</label>
+  <input type="email" id="email" name="email" required/>
+
+  <!-- Hidden field to include the petition ID in the form submission -->
+  <input type="hidden" name="petitionId" th:value="${petition.id}"/>
+
+  <button type="submit">Support Petition</button>
+</form>
+
+<!-- Link back to the list of petitions -->
+<a th:href="@{/petitions}">Back to Petitions</a>
+
+<!-- Add a link back to the index page -->
+<p><a th:href="@{/}">Back to Index</a></p>
 
 </body>
 </html>
+
 

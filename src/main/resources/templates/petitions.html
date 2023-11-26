@@ -9,16 +9,27 @@
 
 <h2>All Petitions</h2>
 
+<!-- Loop through the list of petitions and make each row clickable -->
 <table>
     <tr>
         <th>Title</th>
         <th>Description</th>
     </tr>
     <tr th:each="petition : ${petitions}">
-        <td th:text="${petition.title}"></td>
+        <!-- Link to view-petition page with the ID of the selected petition -->
+        <td>
+            <a th:href="@{/petitions/{id}(id=${petition.id})}">
+                <p th:text="${petition.title}"></p>
+            </a>
+        </td>
         <td th:text="${petition.description}"></td>
     </tr>
 </table>
 
+<!-- Add a link back to the index page -->
+<p><a th:href="@{/}">Back to Index</a></p>
+
 </body>
 </html>
+
+
