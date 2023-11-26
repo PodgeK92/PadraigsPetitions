@@ -9,11 +9,10 @@
 
 <h2>Search Petitions</h2>
 
-<form action="/search" method="get">
-    <label for="keyword">Keyword:</label>
-    <input type="text" id="keyword" name="keyword" required/>
-
-    <button type="submit">Search</button>
+<form th:action="@{/petitions/search}" method="post">
+    <label for="query">Search:</label>
+    <input type="text" id="query" name="query" required/>
+    <button type="submit">Search Petitions</button>
 </form>
 
 <!-- Link back to the index page -->

@@ -59,17 +59,28 @@ public class PetitionController {
         return "search-petition";
     }
 
-    @PostMapping("/petitions/search")
-    public String searchPetitions(@RequestParam String query, Model model) {
-        // Implement logic to search for petitions based on the query
-        // Pass the search results to the view
-        // This can include a Thymeleaf template with search results
-        return "search-results";
-    }
 
     @GetMapping("/thank-you")
     public String thankYou() {
         return "thank-you";
+    }
+
+    @PostMapping("/petitions/search")
+    public String searchPetitions(@RequestParam String query, Model model) {
+        Petition petition = petitionService.searchPetitions(query);
+
+        if (petition != null) {
+            // Redirect to the view page if a match is found
+            return "redirect:/petitions/" + petition.getId();
+        } else {
+            // Redirect to another HTML page for no match
+            return "redirect:/no-match";
+        }
+    }
+
+    @GetMapping("/no-match")
+    public String noMatch() {
+        return "no-match";
     }
 
 

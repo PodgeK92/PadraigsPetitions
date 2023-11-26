@@ -7,5 +7,6 @@ public interface PetitionService {
     List<Petition> getAllPetitions();
     Petition getPetitionById(Long id);
     Petition createPetition(Petition petition);
-    // Add other methods as needed
+
+    Petition searchPetitions(String query);
 }

@@ -67,4 +67,14 @@ public class PetitionServiceImpl implements PetitionService {
         return petition;
     }
 
+    @Override
+    public Petition searchPetitions(String query) {
+        // Implement logic to search for a petition by title
+        // This is a simple case-insensitive search, you can customize it based on your needs
+        return petitions.stream()
+                .filter(petition -> petition.getTitle().toLowerCase().contains(query.toLowerCase()))
+                .findFirst()
+                .orElse(null);
+    }
+
 }
