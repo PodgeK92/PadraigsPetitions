@@ -48,11 +48,16 @@ pipeline {
             }
         }
 
-
-        stage('Exec') {
+        stage ('Deploy') {
             steps {
-                sh 'mvn spring-boot:run'
+                sh 'docker build -f Dockerfile -t myapp . '
             }
         }
+
+        //stage('Exec') {
+            //steps {
+                //sh 'mvn spring-boot:run'
+            //}
+       // }
     }
 }
