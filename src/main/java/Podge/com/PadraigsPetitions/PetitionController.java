@@ -67,6 +67,18 @@ public class PetitionController {
         return "search-results";
     }
 
+    @GetMapping("/thank-you")
+    public String thankYou() {
+        return "thank-you";
+    }
+
+
+    @PostMapping("/submit-support")
+    public String submitSupport(@RequestParam String name, @RequestParam String email) {
+        // Redirect to the thank-you page
+        return "redirect:/thank-you";
+    }
+
     @ExceptionHandler(Exception.class)
     public String handleException(Exception e, Model model) {
         // Log the exception
@@ -79,6 +91,3 @@ public class PetitionController {
         return "error";
     }
 }
-
-
-

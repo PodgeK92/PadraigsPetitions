@@ -14,7 +14,7 @@
 <p>Description: <span th:text="${petition.description}"></span></p>
 
 <!-- Form for users to support the petition -->
-<form action="/petitions/{id}/support" method="post">
+<form action="/submit-support" method="post" id="supportForm">
   <label for="name">Your Name:</label>
   <input type="text" id="name" name="name" required/>
 
@@ -24,6 +24,7 @@
   <!-- Hidden field to include the petition ID in the form submission -->
   <input type="hidden" name="petitionId" th:value="${petition.id}"/>
 
+  <!-- Use type="submit" to submit the form -->
   <button type="submit">Support Petition</button>
 </form>
 
