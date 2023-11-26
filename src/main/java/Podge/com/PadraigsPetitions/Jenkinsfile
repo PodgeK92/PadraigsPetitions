@@ -14,13 +14,13 @@ pipeline {
                 // Run Maven
                 script {
                     // Clean the project
-                    sh 'mvn clean'
+                    sh 'mvn clean:clean'
 
                     // Resolve dependencies
                     sh 'mvn dependency:copy-dependencies'
 
                     // Compile the project
-                    sh 'mvn compile'
+                    sh 'mvn compiler:compile'
                 }
             }
         }
