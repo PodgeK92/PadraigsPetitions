@@ -26,7 +26,7 @@ public class PetitionServiceImpl implements PetitionService {
         Petition petition2 = new Petition();
         petition2.setId(2L);
         petition2.setTitle("Education for All");
-        petition2.setDescription("Ensure access to quality education for everyone.");
+        petition2.setDescription("Free fees for 3rd Level Education.");
 
         Petition petition3 = new Petition();
         petition3.setId(3L);
@@ -36,7 +36,7 @@ public class PetitionServiceImpl implements PetitionService {
         Petition petition4 = new Petition();
         petition4.setId(4L);
         petition4.setTitle("Healthcare Access");
-        petition4.setDescription("Ensure affordable and accessible healthcare for everyone.");
+        petition4.setDescription("Affordable and accessible healthcare for everyone.");
 
         // Add pre-populated petitions to the list
         petitions.add(petition1);
