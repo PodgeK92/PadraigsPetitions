@@ -11,12 +11,10 @@
 
 <table>
     <tr>
-        <th>ID</th>
         <th>Title</th>
         <th>Description</th>
     </tr>
     <tr th:each="petition : ${petitions}">
-        <td th:text="${petition.id}"></td>
         <td th:text="${petition.title}"></td>
         <td th:text="${petition.description}"></td>
     </tr>
