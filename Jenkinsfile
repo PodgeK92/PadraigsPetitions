@@ -37,7 +37,7 @@ pipeline {
         stage('package') {
                     steps {
                         // Archive the War file as an artifact
-                        archiveArtifacts 'target/your-application-name.war'
+                        archiveArtifacts 'target/Padraigspetitions.war'
                     }
                 }
 
