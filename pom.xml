@@ -52,7 +52,7 @@
 			</plugin>
 		</plugins>
 
-		<finalName>Padraigspetitions</finalName>
+		<finalName>${project.artifactId}</finalName>
 	</build>
 
 </project>
