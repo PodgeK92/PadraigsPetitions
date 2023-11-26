@@ -39,10 +39,10 @@ public class PetitionController {
 
     @GetMapping("/petitions/create")
     public String showCreateForm(Model model) {
-        // Implement logic to show the form for creating a petition
-        // This can include a Thymeleaf template with a form
+        model.addAttribute("newPetition", new Petition());
         return "create-petition";
     }
+
 
     @PostMapping("/petitions/create")
     public String createPetition(@ModelAttribute Petition petition) {
@@ -50,6 +50,7 @@ public class PetitionController {
         petitionService.createPetition(petition);
         return "redirect:/petitions";
     }
+
 
     @GetMapping("/petitions/search")
     public String showSearchForm() {
@@ -64,6 +65,18 @@ public class PetitionController {
         // Pass the search results to the view
         // This can include a Thymeleaf template with search results
         return "search-results";
+    }
+
+    @ExceptionHandler(Exception.class)
+    public String handleException(Exception e, Model model) {
+        // Log the exception
+        e.printStackTrace();
+
+        // Error message
+        model.addAttribute("error", "An unexpected error occurred");
+
+        // Return the name of the error Thymeleaf template
+        return "error";
     }
 }
 
