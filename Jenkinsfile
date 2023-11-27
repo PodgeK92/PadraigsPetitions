@@ -50,10 +50,17 @@ pipeline {
 
         stage ('Deploy') {
             steps {
-                sh 'docker build -f Dockerfile -t myapp . '
+                sh 'docker build -f Dockerfile -t myapp:latest . '
             }
         }
-
+        stage('Run Docker Container') {
+            steps {
+                // Run the Docker container
+                script {
+                    sh 'docker run --name "myappcontainer" -p 9090:8080 --detach myapp:latest'
+                }
+            }
+        }
         //stage('Exec') {
             //steps {
                 //sh 'mvn spring-boot:run'
