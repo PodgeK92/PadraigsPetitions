@@ -59,7 +59,7 @@ pipeline {
             steps {
                 // Run the Docker container
                 script {
-                    sh 'sudo docker run --name "myappcontainer" -p 9090:9090 --detach myapp:latest'
+                    sh 'sudo docker run --name "myappcontainer" -p 9090:8080 --detach myapp:latest'
                 }
             }
         }
