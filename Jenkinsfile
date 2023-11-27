@@ -48,11 +48,13 @@ pipeline {
             }
         }
 
-        stage ('Deploy') {
-            steps {
-                sh 'sudo docker build -f Dockerfile -t myapp:latest . '
-            }
+        stage('Deploy') {
+                    steps {
+                        input 'Deploy to Docker?'  // This adds a manual approval step
+                        sh 'sudo docker build -f Dockerfile -t myapp:latest . '
+                    }
         }
+
         stage('Run Docker Container') {
             steps {
                 // Run the Docker container
